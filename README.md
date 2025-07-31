@@ -1,5 +1,7 @@
 # Awesome Claude Code Tips and Session Management
 
+[🇨🇳 中文版本](README_zh.md) | English Version
+
 A comprehensive guide to effective Claude Code usage, covering session management, git workflows, and best practices for AI-assisted development.
 
 ## CLAUDE.md File
