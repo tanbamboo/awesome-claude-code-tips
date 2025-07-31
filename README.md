@@ -10,14 +10,14 @@ A comprehensive guide to effective Claude Code usage, covering session managemen
 - Maintains context between sessions
 
 ### What to Include
-- Specific build commands (`npm run build:prod`)
+- Specific build commands (`npm run build:prod`) - see [npm documentation](https://docs.npmjs.com/cli/v7/commands/npm-run-script)
 - Project architecture not obvious from file structure
 - Custom workflows and conventions
 - Important dependencies and tools
 
 ### What to Exclude
 - Generic advice ("write clean code")
-- Basic commands (`cd`, `ls`)
+- Basic commands (`cd`, `ls`) - see [Unix command reference](https://ss64.com/bash/)
 - Information obvious from reading files
 - Temporary or experimental setups
 
@@ -38,6 +38,7 @@ A comprehensive guide to effective Claude Code usage, covering session managemen
 - Maintains conversation memory
 - Can read, write, and modify files
 - Remembers previous exchanges in current chat
+- Limited by [context window constraints](https://docs.anthropic.com/claude/docs/context-windows)
 
 ### End
 - When exiting (Ctrl+C, closing terminal, timeout)
@@ -88,17 +89,17 @@ A comprehensive guide to effective Claude Code usage, covering session managemen
 Brief description of project purpose and tech stack
 
 ## Essential Commands
-- Build: `npm run build` (outputs to dist/)
-- Test: `npm test` (runs Jest with coverage)
+- Build: `npm run build` (outputs to dist/) - see [npm scripts](https://docs.npmjs.com/cli/v7/using-npm/scripts)
+- Test: `npm test` (runs Jest with coverage) - see [Jest documentation](https://jestjs.io/docs/getting-started)
 - Dev: `npm run dev` (starts on port 3000)
 
 ## Architecture Notes
-- Uses Redux Toolkit for state management
-- API layer in src/services/ with axios interceptors
-- Components follow container/presenter pattern
+- Uses [Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started) for state management
+- API layer in src/services/ with [axios](https://axios-http.com/docs/intro) interceptors
+- Components follow [container/presenter pattern](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 
 ## Git Workflow
-- Create feature branches before implementing new functionality
+- Create feature branches before implementing new functionality - see [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 ```
 
 ## Tips for Effective Use
@@ -171,7 +172,7 @@ Brief description of project purpose and tech stack
 - Fix one specific bug with its root cause
 - Refactor one module or service
 - Set up one piece of infrastructure
-- Write one comprehensive test suite
+- Write one comprehensive test suite - see [testing best practices](https://testing-library.com/docs/)
 
 **Characteristics:**
 - Achievable in 1-2 hours
@@ -195,6 +196,7 @@ Brief description of project purpose and tech stack
 - **You handle:** Branch creation, commits, pushes, merges
 - **I help with:** Commit messages, PR descriptions, git commands
 - **Why:** Git operations are permanent decisions in your project
+- **Learn more:** [Pro Git Book](https://git-scm.com/book/en/v2)
 
 ### Feature Branch Workflow
 ```bash
@@ -204,11 +206,11 @@ git checkout -b feature/name
 # Me: Work on code changes
 # You: Review and commit
 git diff
-git commit -m "feat: descriptive message"
+git commit -m "feat: descriptive message" # See [Conventional Commits](https://www.conventionalcommits.org/)
 
 # Me: Draft PR description
 # You: Create PR
-gh pr create --title "title" --body "description"
+gh pr create --title "title" --body "description" # See [GitHub CLI](https://cli.github.com/manual/gh_pr_create)
 ```
 
 ### Commit Message Best Practice
@@ -225,8 +227,8 @@ gh pr create --title "title" --body "description"
 ### GitHub Integration
 **What I can help with:**
 - Drafting PR descriptions and checklists
-- Writing GitHub Actions workflows
-- Creating issue templates
+- Writing [GitHub Actions](https://docs.github.com/en/actions) workflows
+- Creating [issue templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-issue-forms)
 - Analyzing PR changes for potential issues
 
 **What you control:**
@@ -236,7 +238,7 @@ gh pr create --title "title" --body "description"
 - Repository permissions
 
 ### Complete Workflow Example
-See `example-workflow.md` for a complete end-to-end example of adding a feature from branch creation to PR merge.
+See [example-workflow.md](example-workflow.md) for a complete end-to-end example of adding a feature from branch creation to PR merge.
 
 ## Anti-Patterns to Avoid
 
@@ -266,10 +268,12 @@ See `example-workflow.md` for a complete end-to-end example of adding a feature 
 **Be Specific and Concrete**
 - **Instead of:** "Fix the bug"
 - **Say:** "The login form shows 'Invalid credentials' even with correct password. Check auth service in src/auth.js"
+- **Learn more:** [How to ask good questions](https://stackoverflow.com/help/how-to-ask)
 
 **Provide Context Early**
 - **Share:** "I'm using React with Redux, the API is in src/services/, and I follow functional components"
 - **Why:** I can give better answers when I understand your stack
+- **Reference:** [React documentation](https://react.dev/)
 
 **Use Examples**
 - **Show me:** What you want the output to look like
@@ -310,8 +314,8 @@ See `example-workflow.md` for a complete end-to-end example of adding a feature 
 4. **Fix:** Address root cause, not just symptoms
 
 **Common Error Patterns**
-- **Import issues:** Check file paths and exports
-- **Async problems:** Look for missing await/then
+- **Import issues:** Check file paths and exports - see [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- **Async problems:** Look for missing await/then - see [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - **State issues:** Check component lifecycle and state updates
 - **API errors:** Verify endpoints, headers, and data formats
 
@@ -352,6 +356,7 @@ See `example-workflow.md` for a complete end-to-end example of adding a feature 
 - **Edge cases:** Empty inputs, null values, boundary conditions
 - **Error handling:** Invalid inputs, network failures
 - **Integration:** How components work together
+- **Resources:** [Testing Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
 
 ### Code Review Best Practices
 
@@ -369,18 +374,18 @@ See `example-workflow.md` for a complete end-to-end example of adding a feature 
 ### Project Setup Tips
 
 **New Project Checklist**
-- [ ] Initialize version control
+- [ ] Initialize version control - see [Git init](https://git-scm.com/docs/git-init)
 - [ ] Set up basic project structure
 - [ ] Configure build tools
 - [ ] Set up testing framework
 - [ ] Create CLAUDE.md with initial setup
-- [ ] Set up CI/CD pipeline
+- [ ] Set up [CI/CD pipeline](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions)
 - [ ] Add documentation structure
 
 **Environment Management**
-- **Use .env files:** For configuration and secrets
+- **Use .env files:** For configuration and secrets - see [.env best practices](https://create-react-app.dev/docs/adding-custom-environment-variables/)
 - **Document setup:** Include environment setup instructions
-- **Version control:** Exclude sensitive files with .gitignore
+- **Version control:** Exclude sensitive files with [.gitignore](https://git-scm.com/docs/gitignore)
 
 ### Documentation Beyond CLAUDE.md
 
@@ -396,6 +401,7 @@ See `example-workflow.md` for a complete end-to-end example of adding a feature 
 - **Explain why:** Not just what the code does
 - **Document decisions:** Why this approach was chosen
 - **Mark TODOs:** For future improvements or known issues
+- **Reference:** [Code comment best practices](https://www.thoughtfulcode.com/comment-your-code/)
 
 ### Collaboration Tips
 
@@ -417,9 +423,10 @@ See `example-workflow.md` for a complete end-to-end example of adding a feature 
 - **Claude + Testing:** Write comprehensive test suites
 - **Claude + Documentation:** Generate clear documentation
 - **Claude + Code Review:** Get second opinions on changes
+- **Reference:** [AI-assisted development best practices](https://www.anthropic.com/claude-code)
 
 **Automation Opportunities**
-- **GitHub Actions:** I can write CI/CD workflows
+- **GitHub Actions:** I can write CI/CD workflows - see [GitHub Actions docs](https://docs.github.com/en/actions)
 - **Scripts:** Automate repetitive development tasks
 - **Templates:** Generate code templates for common patterns
 

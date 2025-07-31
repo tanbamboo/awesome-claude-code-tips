@@ -2,6 +2,8 @@
 
 ## Scenario: Adding User Authentication Feature
 
+*For more detailed guidance on Claude Code best practices, see [README.md](README.md)*
+
 ### Step 1: Start New Feature
 
 **You:** "Let's add user authentication to our app"
@@ -19,7 +21,7 @@ git checkout -b feature/user-authentication
 
 ### Step 2: Work on Feature
 
-**You:** "Help me implement JWT authentication"
+**You:** "Help me implement [JWT authentication](https://jwt.io/introduction)"
 
 **Me:** [Code implementation work - creating auth service, middleware, etc.]
 
@@ -30,7 +32,7 @@ git diff
 
 # Commit logical chunks of work
 git add .
-git commit -m "feat: add JWT authentication service with token generation"
+git commit -m "feat: add JWT authentication service with token generation" # See [Conventional Commits](https://www.conventionalcommits.org/)
 ```
 
 ### Step 3: Complete Feature
@@ -46,7 +48,7 @@ git diff --staged
 git add .
 git commit -m "feat: implement authentication middleware and protected routes
 
-- Add JWT middleware for route protection
+- Add [JWT middleware](https://www.npmjs.com/package/express-jwt) for route protection
 - Implement /login and /register endpoints
 - Add user model and database schema
 - Include authentication tests
@@ -98,12 +100,12 @@ Add JWT-based user authentication system with secure token handling and protecte
 
 Run this command:
 ```bash
-gh pr create --title 'feat: add JWT authentication system' --body '[PR description above]'
+gh pr create --title 'feat: add JWT authentication system' --body '[PR description above]' # See [GitHub CLI PR docs](https://cli.github.com/manual/gh_pr_create)
 ```
 
 ### Step 5: Handle PR Review
 
-**Reviewer:** "Can you add rate limiting to the auth endpoints?"
+**Reviewer:** "Can you add [rate limiting](https://www.npmjs.com/package/express-rate-limit) to the auth endpoints?"
 
 **Me:** "Let's add rate limiting and commit the changes"
 
@@ -165,8 +167,8 @@ git push origin --delete feature/user-authentication
 Extend authentication system to support social login providers (Google, GitHub, etc.)
 
 ## Acceptance Criteria
-- [ ] Google OAuth integration
-- [ ] GitHub OAuth integration  
+- [ ] Google OAuth integration - see [Google OAuth docs](https://developers.google.com/identity/protocols/oauth2)
+- [ ] GitHub OAuth integration - see [GitHub OAuth docs](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)  
 - [ ] User profile linking
 - [ ] Social login UI components
 - [ ] Error handling for failed social logins
@@ -180,7 +182,7 @@ Extend authentication system to support social login providers (Google, GitHub, 
 
 Run this command:
 ```bash
-gh issue create --title "feat: add social login (OAuth) integration" --body "[Issue description above]"
+gh issue create --title "feat: add social login (OAuth) integration" --body "[Issue description above]" # See [GitHub CLI issue docs](https://cli.github.com/manual/gh_issue_create)
 ```
 
 ## Key Principles Demonstrated
