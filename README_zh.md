@@ -1,4 +1,4 @@
-# Claude Code 技巧和会话管理精选
+# Claude Code 技巧精选
 
 中文版本 | [English Version](README.md)
 
